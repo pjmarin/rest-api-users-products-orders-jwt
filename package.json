@@ -1,0 +1,40 @@
+{
+  "name": "creating-a-rest-api-with-nodejs-academind",
+  "version": "1.0.0",
+  "description": "simple shop",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "copyfile": "cp -r origen destino & npm start",
+    "copynefile": "node -e \"console.log(\"grr\")\" && exit 1",
+    "test": "cp -r origen destino || echo \"Error: El destino no existe\" && exit 1",
+    "step1": "cp -r api/utils/log_cfg/ tsDist/api/utils/ ||  echo \"Error: Fallo el paso 1 copiar carpeta log_cfg a tsdist-api-utils\"",
+    "step2": "cd tsDist/api/utils/ ||  echo \"Error: Fallo el paso 2 acceder a la carpeta tsdis-api-utils\"",
+    "step3": "chmod -R 777 log_cfg ||  echo \"Error: Fallo el paso 3 conceder permisos a la carpeta tsdis-api-utils-log_cfg\"",
+    "step4": "cd ../../../ || echo \"Error: Subir al directorio raiz\"",
+    "step5": "cd tsDist/ || echo \"Error: Entrar al directorio tsdist\"",
+    "step6": "mkdir logs || echo \"Error: Crear carpeta logs dentro de la carpeta tsdist\"",
+    "step7": "chmod -R 777 logs || echo \"Error: Asignar permisos a la carpeta logs recien creada\"",
+    "allsteps": "(cp -r api/utils/log_cfg/ tsDist/api/utils/ && cd tsDist/api/utils/ && chmod -R 777 log_cfg && cd ../../../ && cd tsDist/ && mkdir logs && chmod -R 777 logs) || echo \"Error: Algo falla en allsteps\"",
+    "package:name": "echo \"Name: $npm_package_name\"",
+    "permissions": "drwxrwxrwx",
+    "readpermissions": "(cd api/utils/log_cfg/ && ls -l) || echo \"error al leer permisos\"",
+    "testfunctionOK": "node -e \"var fs = require('fs');var path = './api/utils/log_cfg';try{fs.access(path,fs.constants.X_OK,(err)=>{if(err){console.log('%s doesnt exist',path);}else{console.log('can execute %s',path);}});}catch(e){console.log('Error al intentar acceder, entramos en el catch: ', e)}\"",
+    "testfunction2OK": "node -e \"var fs = require('node:fs');try {fs.accessSync('api/utils/log_cfg', fs.constants.R_OK | fs.constants.W_OK);console.log('can read/write');}catch(err){console.error('no access!');}\"",
+    "fsPromises": "node -e \"async function logpromise(){var fsPromises = require('node:fs/promises');try {var promise = fsPromises.readFile('./api/utils/log_cfg/test.json');await promise;console.log(promise)}catch(err){console.error(err);}}logpromise()"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
